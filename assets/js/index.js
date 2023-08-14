@@ -119,7 +119,7 @@ const removeFromCart = (button) => {
     save();
 
     // Re-enable the "Add to Cart" button immediately after removal
-    disableBtn(productId);
+    btnTogler(productId);
   }
 };
 const save = () => {
@@ -137,14 +137,14 @@ const updateQuantity = (input) => {
   };
   if (value == 0) {
     cart.splice(productIndex, 1);
-    setTimeout(() => disableBtn(productId), 0);
+    setTimeout(() => btnTogler(productId), 0);
   }
   renderCart(cart);
   save();
 };
 renderCart(cart);
 
-const disableBtn = (productId) => {
+const btnTogler = (productId) => {
   const addButton = document.querySelector(`[data-product-id="${productId}"]`);
   if (addButton) {
     addButton.classList.remove("disabled");
