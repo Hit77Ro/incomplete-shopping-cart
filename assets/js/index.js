@@ -50,7 +50,7 @@ const renderProducts = (data = []) => {
 
 const getProducts = async () => {
   try {
-    const res = await fetcher("../../products.json");
+    const res = await fetcher("https://fakestoreapi.com/products");
     products.unshift(...res);
     renderProducts(products);
   } catch (error) {
